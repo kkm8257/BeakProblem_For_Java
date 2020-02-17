@@ -11,5 +11,56 @@ package BaekProblem;
 
 //첫째 줄에 N의 사이클 길이를 출력한다.
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
+
+public class Q1110{
+	
+	public static void main(String[] args)throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String input="";
+		int count=0;
+		int temp=0;
+		int first,second=0;
+		int basicTemp;
+		
+		
+		int newFirst,newSecond;
+		int newTemp=0;
+		
+		temp=Integer.parseInt(br.readLine());
+		basicTemp=temp;
+		while(true) {
+			first=temp/10;
+//			System.out.println(first);
+			second=(temp%10);
+//			System.out.println(second);
+			newFirst=second;
+//			System.out.println(newFirst);
+			newSecond=(first+second)%10;
+//			System.out.println(newSecond);
+			newTemp=second*10+newSecond;
+//			System.out.println(newTemp);
+			count=count+1;
+			temp=newTemp;
+			
+			if(temp==basicTemp) {
+				System.out.println(count);
+				break;
+			}
+			
+		}
+		
+		
+		
+	}
+	
+}
 

@@ -54,7 +54,11 @@ public class Q1002 {
 			bigR=r2;
 			smallR=r1;
 		}
-		
+		else if(r1==r2) {
+			
+			bigR=r1;
+			smallR=r1;
+		}
 		//큰 반지름 구하기
 		
 		

@@ -20,7 +20,6 @@ public class Q2798 {
 		int M=Integer.parseInt(st.nextToken());
 		
 		int[] array = null;
-		
 	
 			st=new StringTokenizer(br.readLine());
 			array=new int[N];
@@ -38,10 +37,7 @@ public class Q2798 {
 	
 	public static int solve(int[] temp,int M,int N) {
 		
-		int total=0;
-		
-		int preTotal=0;
-		
+		int total=0;		
 		int result=0;
 		
 		
@@ -65,35 +61,23 @@ public class Q2798 {
 						if((i==j)||(i==q)||(q==j)) continue;
 //						System.out.println("i j q :"+i+" "+j+" "+q);
 						
-						if((i==0)&&(j==1)&&(q==2)) {
-							preTotal=temp[0]+temp[1]+temp[2];
-							continue;
-						}
-						
+
 				
 //						System.out.println(temp[i] + " "+temp[j]+ " "+temp[q]);
 						
 						total=temp[i]+temp[j]+temp[q];
-						if((preTotal>M)&&(preTotal==temp[0]+temp[1]+temp[2])) {
-							preTotal=total;
-							continue;
-						}
+
 						
 						if(total==M) {
 							return total;
 						}
 						else if(total<M) {
-							if((M-total)<=(M-preTotal)) {
+							if((M-total)<=(M-result)) {
 								result=total;
 							}
-							else if((M-total)>(M-preTotal)) {
-								result=preTotal;
-							}
-						}
-						
-						else if(total>M) {
 							
 						}
+						
 						
 						total=total-temp[q];
 //						System.out.println("q³ª°¡¿ä~");
